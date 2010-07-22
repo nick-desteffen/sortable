@@ -1,8 +1,17 @@
 Sortable
 ==============
 
+History
+==============
+
+07/22/2010
+Version: 0.0.2
+ - Bug Fixes
+ - Updated Documentation
+
 04/13/2010
 Version: 0.0.1
+  - Initial release
 
 Use this plugin to create links for sorting active record result sets.
 
@@ -12,15 +21,15 @@ Example
 In your model:
 
 class User < ActiveRecord::Base
-  sortable [:first_name, :last_name, :age, :date_of_birth]
+  sortable_columns [:first_name, :last_name, :age, :date_of_birth]
 end
 
 In your view:
 
-<%= sort_link(:title => "First Name", :sort_column => :first_name) %>
+<%= sort_link(:title => "First Name", :sort_column => :first_name, :sortable_type => :user) %>
 
 In your controller:
 
-@users = User.ordered(sort_order(:default => :age, :allowable_sorts => User.sorts))
+@users = User.ordered(sort_order(:default => :age, :allowable_sorts => User.sorts, :sortable_type => :user))
 
 Copyright (c) 2010 Nick DeSteffen, released under the MIT license

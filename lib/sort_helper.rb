@@ -7,7 +7,7 @@ module SortHelper
     
     condition = options[:unless] if options.has_key?(:unless)
     
-    if session[:sortable_type] == options[:sortable_type] && session[:last_sorted_column].to_sym == options[:sort_column]
+    if session[:sortable_type] && session[:sortable_type].to_sym == options[:sortable_type] && session[:last_sorted_column] && session[:last_sorted_column].to_sym == options[:sort_column]
       sort_dir = params[:dir] == "up" ? "down" : "up"
     else
       sort_dir = "up"

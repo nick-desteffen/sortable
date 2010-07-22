@@ -12,8 +12,8 @@ module Sortable
     allowable_sorts = args[:allowable_sorts]
     default_dir = args[:default_direction] || Direction::Ascending
     
-    if session[:sortable_type] == args[:sortable_type] && session[:last_sorted_column]
-      last_sort_or_default = session[:last_sorted_column]
+    if session[:sortable_type] && session[:sortable_type].to_sym == args[:sortable_type] && session[:last_sorted_column] && session[:last_sorted_column].to_sym
+      last_sort_or_default = session[:last_sorted_column].to_sym
     else
       last_sort_or_default = default
     end
