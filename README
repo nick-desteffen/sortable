@@ -4,6 +4,11 @@ Sortable
 History
 ==============
 
+08/17/2010
+Version: 0.0.3
+ - Added update argument to ajax generated links
+ - Added method to generated links
+
 07/22/2010
 Version: 0.0.2
  - Bug Fixes
