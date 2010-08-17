@@ -18,9 +18,9 @@ module SortHelper
     parameters.delete(:authenticity_token)
 
     if options[:remote] && options[:remote] == true
-      link_to_remote options[:title], :url => parameters
+      link_to_remote options[:title], :url => parameters, :method => :get, :update => options[:update]
     else
-      link_to_unless condition, options[:title], parameters
+      link_to_unless condition, options[:title], parameters, :method => :get
     end
   end
   
